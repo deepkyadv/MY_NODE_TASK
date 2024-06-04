@@ -18,12 +18,19 @@ app.use(express.json())
 
 // CREATING USER API AND STORED IN DB
 app.post("/create", async (req,res)=>{
-    const data = new User(req.body);
-    const result = await data.save()
-    console.log(req.body);
-    console.log(result);
-    res.send(result);
-    console.log("inserted");
+    // const data = new User(req.body);
+    // const result = await data.save()
+    // console.log(req.body);
+    // console.log(result);
+    // res.send(result);
+    // console.log("inserted");
+    try {
+        const newUser = new User(req.body); 
+        const savedUser = await newUser.save();
+        res.status(201).json(savedUser);
+      } catch (error) {
+        res.status(400).json({ error: error.message });
+      }
 })
 
 // GET REQUEST TO FETCH USER
