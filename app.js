@@ -5,6 +5,8 @@ const path = require("path");
 require("./db/conn");
 const User = require("./models/user");
 const bodyParser = require("body-parser");
+const PORT = process.env.PORT || 4100
+
 
 
 const app = express();
@@ -49,7 +51,7 @@ app.get("/", (req, res)=>{
     
 })
 
-myserver.listen(4100, ()=>{
+myserver.listen(PORT, ()=>{
     console.log("server connected")
 })
 
