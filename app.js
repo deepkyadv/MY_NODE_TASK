@@ -5,7 +5,7 @@ const path = require("path");
 require("./db/conn");
 const User = require("./models/user");
 const bodyParser = require("body-parser");
-const PORT = process.env.PORT || 4100
+
 
 
 
@@ -51,7 +51,7 @@ app.get("/", (req, res)=>{
     
 })
 
-myserver.listen(PORT, ()=>{
+myserver.listen(4100, ()=>{
     console.log("server connected")
 })
 
