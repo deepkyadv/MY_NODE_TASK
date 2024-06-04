@@ -139,7 +139,7 @@
         $.ajax({
           type: 'POST',
          url: 'http://localhost:4100/create',
-         // url: 'https://node-task-01-01.onrender.com/create',
+         // url: 'https://my-node-task.onrender.com/create',
           contentType: 'application/json',
           data: JSON.stringify(formData),
           success: function (data) {
@@ -156,7 +156,7 @@
       $('#showData').on('click', function() {
         $.ajax({
            url: 'http://localhost:4100/fetchData',
-          //url: 'https://node-task-01-01.onrender.com/fetchData',
+          //url: 'https://my-node-task.onrender.com/fetchData',
           method: 'GET',
           success: function(response) {
             let table = '<h2>User Data</h2><table><tr><th>First Name</th><th>Last Name</th><th>Mobile No</th><th>Email</th><th>Street</th><th>City</th><th>State</th><th>Country</th><th>Login ID</th></tr>';
@@ -184,7 +184,7 @@
         
 
       $('#showData').click(function () {
-        window.open('http://localhost:4100/fetchDdata', '_blank');
+        window.open('https://my-node-task.onrender.com/fetchData', '_blank');
       });
     });
 
